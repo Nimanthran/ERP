@@ -1,0 +1,88 @@
+/* PRE DEFINED */
+:root{
+    --primaryBg: rgb(48, 48, 48);
+    --secondaryBg: rgb(39, 39, 39);
+    --tertiaryBg:white;
+    --itemBg:rgb(34, 34, 34);
+    --navShadow: rgb(26, 26, 26);
+    --primartText: rgb(170, 170, 170);
+    --secondaryText: black;
+    --tertiaryText: rgb(70, 70, 70);
+    --inactiveNavText: rgb(117, 117, 117);
+    --inactiveNavTextHover: rgb(168, 168, 168);
+    --activeNavText: rgb(214, 214, 214);
+}
+
+@font-face {
+    font-family: 'login-ff';
+    src: url('/font/Outfit-VariableFont_wght.ttf') format('truetype');
+    /* src: url('/public/font/Outfit-VariableFont_wght.ttf') format('truetype'); */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* container */
+
+.container{
+    font-family: 'login-ff';
+    color: white;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* main */
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 17%;
+    align-items: center;
+}
+
+.welcome-text{
+    color: white;
+    font-size: 3rem;
+}
+
+.main > form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.main > form > div{
+    display: flex;
+    gap: 20px;
+}
+
+
+input {
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.main > form > button {
+    width: 75px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--activeNavText);
+    color: black;
+    cursor: pointer;
+    font-family: 'login-ff';
+    font-size: 1.1rem;
+    border: 0px;
+}
+
+.main > form > button:hover {
+    transform: scale(110%);
+    color: var(--activeNavText);
+    background-color: black;
+    border: 0px;
+    transition: 0.5s;
+    cursor: pointer;
+}

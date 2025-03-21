@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <span class="welcome-text">Welcome back</span>
+            <form id="login-form" action="/login" method="post">
+                <div>
+                    <label for="Password">Password</label>
+                    <input type="password" name="Password" id="Password" placeholder="">
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <span class="incorrect <%= (incorrect)?'':'hidden' %>">password incorrect</span>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

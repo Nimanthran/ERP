@@ -1,0 +1,365 @@
+:root{
+    --primaryBg: rgb(48, 48, 48);
+    --secondaryBg: rgb(39, 39, 39);
+    --tertiaryBg:white;
+    --itemBg:rgb(34, 34, 34);
+    --navShadow: rgb(26, 26, 26);
+    --primartText: rgb(170, 170, 170);
+    --secondaryText: black;
+    --tertiaryText: rgb(70, 70, 70);
+    --inactiveNavText: rgb(117, 117, 117);
+    --inactiveNavTextHover: rgb(168, 168, 168);
+    --activeNavText: rgb(214, 214, 214);
+}
+
+@font-face {
+    font-family: 'credits-ff';
+    src: url('/font/Outfit-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/***************************************
+
+           MAIN CONTAINER
+
+***************************************/
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    color: var(--primartText);
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: 'credits-ff';
+    gap:5%;
+    align-items: center;
+}
+
+.credits-full-details{
+    width: 100%;
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+    align-items: start;
+}
+
+/* ***************************************** */
+/*       Managing Credits container         */
+/* *************************************** */
+
+
+.manage-credits{
+    margin-top: 6%;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    font-family: 'credits-ff';
+    gap: 20px;
+}
+
+.manage-credits > h1 {
+    color: var(--activeNavText);
+}
+
+.header-container{
+    gap: 30px;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/*******************  
+credits LIST CSS
+*****************/
+
+.credits-list-container{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    /* overflow-x: hidden; */
+    width: 100%;
+}
+
+.credits-item{
+    /* border: 1px solid var(--primartText); */
+    background-color: var(--itemBg);
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    color: white;
+    box-shadow: 3px 6px 5px var(--navShadow);
+    /* justify-content: space-between; */
+}
+
+.credits-item > .details {
+    width: 33%;
+}
+.credits-item> .category {
+    width: 33%;
+}
+.credits-item> .price, .credits-item> .total-price {
+    width: 33%;
+}
+.credits-item> .date {
+    width: 33%;
+}
+.credits-item > a > button {
+    background-color: var(--itemBg);
+    border: 0px;
+    color: white;
+}
+.credits-item > a > button:hover {
+    cursor: pointer;
+}
+.credits-item > .product {
+    width: 25%;
+}
+.credits-item > .quantity {
+    width: 25%;
+}
+/*********************  
+FORM FOR ADDING CREDITS
+*********************/
+
+.add-credit{
+    padding: 10px;
+    /* border: 1px solid var(--primartText); */
+    width: 70%;
+}
+
+.add-credit > form {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 2%;
+}
+
+.add-credit > form > button,
+.filter > form > .buttons > button{
+    background-color: var(--primaryBg);
+    border: 0;
+    font-size: 2rem;
+    color: var(--primartText);
+}
+
+.add-credit > form > button:hover,
+.filter > form > .buttons > button:hover{
+    cursor: pointer;
+}
+
+.input-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+input,select {
+    appearance: none;
+    width: max(100px,7vw);
+    /* width: 10vw; */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 8px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: var(--itemBg);
+    border: 1px solid var(--itemBg);
+    box-shadow: 0;
+    color: rgb(255, 255, 255);
+    color-scheme: dark;
+    box-shadow: 4px 5px 2px var(--navShadow);
+    
+}
+
+select{
+    cursor: pointer;
+}
+
+
+select:hover, select:focus{
+    
+    
+    border-color:var(--itemBg);
+    outline: auto;
+    background-color: var(--itemBg);
+    box-shadow: 4px 5px 2px var(--navShadow)
+}
+
+::placeholder {
+    color: rgb(148, 148, 148);
+}
+
+
+/**************
+ Slider        */
+
+ /* The switch - the box around the slider */
+ .switch {
+    position: relative;
+    display: inline-block;
+    width: 78px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--navShadow);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color:var(--navShadow);
+  }
+
+  input:checked + .slider::before {
+    background-color:white;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--navShadow);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .slider-input-add{
+    align-items: center;
+    display: flex;
+    gap: 20px;
+  }
+
+  .header-container > .slider-input-add > .switch {
+    width: 63px;
+  }
+
+/*************************
+CREDIT LIST NAVIGATOR
+*************************/
+
+.item-navigator {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.item-navigator > a > button {
+    background-color: var(--itemBg);
+    color: white;
+    padding: 10px;
+    border-radius: 100%;
+    border: 0px;
+    box-shadow: 3px 5px 5px var(--navShadow);
+}
+
+.item-navigator > a > button:hover {
+    cursor: pointer;
+}
+
+.item-navigator > span {
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+/* *********************************** */
+/*         Search Container           */
+/* ********************************* */
+
+.filter {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
+}
+
+/***********************
+      Filter Body
+**********************/
+
+.filter > form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap:10px;
+}
+
+/*****************
+     Analysis
+*****************/
+
+.credits-analysis {
+    position: absolute;
+    top: 4%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 10%;
+    font-size: 1.5rem;
+    color: white;
+    /* background-color: rgb(255, 253, 253); */
+    border-radius: 20px;
+    width: 70%;
+}
+
+.credits-analysis > span {
+    /* background-color: var(--itemBg); */
+    border-radius: 20px;
+    /* box-shadow: 3px 5px 5px var(--navShadow); */
+    padding:15px;
+}
