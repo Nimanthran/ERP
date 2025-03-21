@@ -14,6 +14,7 @@ const dashboard  = require('./routes/dashboardRoutes');
 const credits = require('./routes/creditsRoutes');
 const inventory = require('./routes/inventoryRoutes');
 const login = require('./routes/loginRoutes');
+const home = require('./routes/homeRoutes');
 // To Create Session
 
 app.use(session({
@@ -41,6 +42,7 @@ app.use('/chartjs', express.static(path.join(__dirname, 'node_modules/chart.js/d
 ///////////////////////////////////////////////////////////////////////
 
 connectDB('Expense').then((db) => {
+    app.use('/',home);
     app.use('/login',login);
     app.locals.expenseDb = db;
     connectDB('Credits').then((creditsDb)=>{
